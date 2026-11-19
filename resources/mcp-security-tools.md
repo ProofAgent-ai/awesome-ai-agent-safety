@@ -20,6 +20,7 @@ Scanners, gateways, sandboxes, guidance and attack write-ups for securing Model 
 - [MCP Server Fuzzer](https://github.com/tavric-labs/mcp-server-fuzzer) — Black-box fuzzing and security assessment of live MCP servers. `OSS` `MIT`
 - [MCP-Shield](https://github.com/riseandignite/mcp-shield) — Scans installed MCP servers for tool poisoning, exfiltration and cross-origin attacks. `OSS` `MIT`
 - [MCPSafetyScanner](https://github.com/johnhalloran321/mcpSafetyScanner) — Agent-based MCP safety auditing and remediation (from arXiv 2504.03767). `OSS` `MPL-2.0`
+- [ProofAgent Nano MCP server](https://www.proofagent.ai/docs/guardrail#mcp) — Remote MCP guardrail that checks user messages, tool calls, tool results and replies, scores the risk of actions with side effects and holds them for human approval; free tier with an API key from app.proofagent.ai. Runnable in [Lab 06](../labs/06-mcp-guard-server). `Commercial` `Free tier`
 
 ## Gateways and proxies
 

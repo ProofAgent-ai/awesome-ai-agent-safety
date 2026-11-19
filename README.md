@@ -22,7 +22,7 @@ This repo collects what you need to build agents that survive contact with attac
 ```bash
 git clone https://github.com/ProofAgent-ai/awesome-ai-agent-safety && cd awesome-ai-agent-safety
 python3 labs/04-fully-guarded-agent/run.py     # watch attacks succeed, then fail
-python3 run_tests.py                           # 30 tests, Python 3.9+, no dependencies
+python3 run_tests.py                           # 35 tests, Python 3.9+, no dependencies
 ```
 
 ## Contents
@@ -74,6 +74,7 @@ Each lab has an **unprotected baseline**, a **guarded** version, **tests** and t
 | [03 · Privacy protection](labs/03-privacy-protection) | Mask PII and secrets locally on CPU, keep the vault, restore on your side | 7/7 values reach the model → 0/7 |
 | [04 · Fully guarded agent](labs/04-fully-guarded-agent) | Wire all four checkpoints with allow / mask / review / block | 5/5 attacks succeed → 0/5, benign tasks still work |
 | [05 · Agent red teaming](labs/05-agent-red-teaming) | Run multi-turn attacks and produce an attack-success rate and findings | 100% → 0% attack success rate, with the stopping checkpoint per scenario |
+| [06 · MCP guard server](labs/06-mcp-guard-server) | Call a guardrail over MCP at every checkpoint, risk-score side-effect actions and hold them for human approval | 6/6 attacks succeed → 0/6, large payment waits for approval |
 
 > The built-in `local` guard is a set of transparent regex rules for **learning**. It is easy to evade (Lab 01 shows how). Production systems need a model-based guard **and** the deterministic controls from Labs 02 and 04.
 
@@ -100,8 +101,9 @@ Each lab has an **unprotected baseline**, a **guarded** version, **tests** and t
 - [Tool poisoning attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) - Invariant Labs. Instructions hidden in tool descriptions.
 - [Agent Scan (formerly mcp-scan)](https://github.com/snyk/agent-scan) - Scans MCP servers for tool poisoning, rug pulls and toxic flows. `OSS`
 - [Cisco MCP Scanner](https://github.com/cisco-ai-defense/mcp-scanner) - YARA rules plus LLM judging for MCP servers. `OSS`
+- [ProofAgent Nano MCP server](https://www.proofagent.ai/docs/guardrail#mcp) - Remote MCP guardrail with one check tool per checkpoint and human approval for risky actions; free API key. `Commercial` `Free tier`
 - **47 scanners, gateways, sandboxes and write-ups:** [resources/mcp-security-tools.md](resources/mcp-security-tools.md)
-- Guide: [docs/mcp-security.md](docs/mcp-security.md) · Lab: [02](labs/02-mcp-tool-poisoning) · Script: [examples/mcp/scan_tools.py](examples/mcp)
+- Guide: [docs/mcp-security.md](docs/mcp-security.md) · Labs: [02](labs/02-mcp-tool-poisoning), [06](labs/06-mcp-guard-server) · Script: [examples/mcp/scan_tools.py](examples/mcp)
 
 ## 4. Privacy and data protection
 
