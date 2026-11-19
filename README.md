@@ -79,35 +79,35 @@ Each lab has an **unprotected baseline**, a **guarded** version, **tests** and t
 
 ## 1. AI agent security 101
 
-- [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) – Simon Willison. The simplest useful threat model for agents.
-- [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/) and the [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/) – shared vocabulary (LLM01–LLM10, ASI01–ASI10).
-- [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837) – Beurer-Kellner et al., 2025. Six patterns that trade capability for provable safety.
-- [MITRE ATLAS](https://atlas.mitre.org/) – adversary tactics and techniques against AI systems, now with agent-specific techniques.
-- [Our threat-model guide](docs/agent-threat-models.md) – attack surfaces, trust boundaries and the four checkpoints, mapped to OWASP and ATLAS.
+- [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) - Simon Willison. The simplest useful threat model for agents.
+- [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/) and the [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/) - Shared vocabulary (LLM01–LLM10, ASI01–ASI10).
+- [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837) - Beurer-Kellner et al., 2025. Six patterns that trade capability for provable safety.
+- [MITRE ATLAS](https://atlas.mitre.org/) - Adversary tactics and techniques against AI systems, now with agent-specific techniques.
+- [Our threat-model guide](docs/agent-threat-models.md) - Attack surfaces, trust boundaries and the four checkpoints, mapped to OWASP and ATLAS.
 
 ## 2. Prompt injection and jailbreaks
 
-- [Not what you've signed up for: indirect prompt injection](https://arxiv.org/abs/2302.12173) – Greshake et al., 2023. The paper that showed tool content can take over an LLM application.
-- [Defeating Prompt Injections by Design (CaMeL)](https://arxiv.org/abs/2503.18813) – Debenedetti et al., 2025. Separates control flow from untrusted data.
-- [Spotlighting](https://arxiv.org/abs/2403.14720), [StruQ](https://arxiv.org/abs/2402.06363), [SecAlign](https://arxiv.org/abs/2410.05451), [Instruction Hierarchy](https://arxiv.org/abs/2404.13208) – model-level and prompt-level defences.
-- [Universal and Transferable Adversarial Attacks (GCG)](https://arxiv.org/abs/2307.15043) · [PAIR](https://arxiv.org/abs/2310.08419) · [Crescendo](https://arxiv.org/abs/2404.01833) – how automated and multi-turn jailbreaks work.
-- [Embrace The Red](https://embracethered.com/blog/) – Johann Rehberger's long-running series of real prompt-injection exploits.
+- [Not what you've signed up for: indirect prompt injection](https://arxiv.org/abs/2302.12173) - Greshake et al., 2023. The paper that showed tool content can take over an LLM application.
+- [Defeating Prompt Injections by Design (CaMeL)](https://arxiv.org/abs/2503.18813) - Debenedetti et al., 2025. Separates control flow from untrusted data.
+- [Spotlighting](https://arxiv.org/abs/2403.14720), [StruQ](https://arxiv.org/abs/2402.06363), [SecAlign](https://arxiv.org/abs/2410.05451), [Instruction Hierarchy](https://arxiv.org/abs/2404.13208) - Model-level and prompt-level defences.
+- [Universal and Transferable Adversarial Attacks (GCG)](https://arxiv.org/abs/2307.15043) · [PAIR](https://arxiv.org/abs/2310.08419) · [Crescendo](https://arxiv.org/abs/2404.01833) - How automated and multi-turn jailbreaks work.
+- [Embrace The Red](https://embracethered.com/blog/) - Johann Rehberger's long-running series of real prompt-injection exploits.
 - Guide: [docs/prompt-injection.md](docs/prompt-injection.md) · Lab: [01](labs/01-prompt-injection) · All papers: [resources/research-papers.md](resources/research-papers.md#prompt-injection)
 
 ## 3. MCP and tool security
 
-- [MCP security best practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) – the official guidance on confused deputies, token passthrough, session hijacking and more.
-- [Tool poisoning attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) – Invariant Labs. Instructions hidden in tool descriptions.
-- [Agent Scan (formerly mcp-scan)](https://github.com/snyk/agent-scan) – scans MCP servers for tool poisoning, rug pulls and toxic flows. `OSS`
-- [Cisco MCP Scanner](https://github.com/cisco-ai-defense/mcp-scanner) – YARA rules plus LLM judging for MCP servers. `OSS`
+- [MCP security best practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) - The official guidance on confused deputies, token passthrough, session hijacking and more.
+- [Tool poisoning attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) - Invariant Labs. Instructions hidden in tool descriptions.
+- [Agent Scan (formerly mcp-scan)](https://github.com/snyk/agent-scan) - Scans MCP servers for tool poisoning, rug pulls and toxic flows. `OSS`
+- [Cisco MCP Scanner](https://github.com/cisco-ai-defense/mcp-scanner) - YARA rules plus LLM judging for MCP servers. `OSS`
 - **47 scanners, gateways, sandboxes and write-ups:** [resources/mcp-security-tools.md](resources/mcp-security-tools.md)
 - Guide: [docs/mcp-security.md](docs/mcp-security.md) · Lab: [02](labs/02-mcp-tool-poisoning) · Script: [examples/mcp/scan_tools.py](examples/mcp)
 
 ## 4. Privacy and data protection
 
-- [Microsoft Presidio](https://github.com/data-privacy-stack/presidio) – PII detection and anonymisation. `OSS` `MIT`
-- [gitleaks](https://github.com/gitleaks/gitleaks) · [TruffleHog](https://github.com/trufflesecurity/trufflehog) · [detect-secrets](https://github.com/Yelp/detect-secrets) – secret scanners for code, logs and prompts. `OSS`
-- [Extracting Training Data from Large Language Models](https://arxiv.org/abs/2012.07805) – Carlini et al., 2021. Why anything you send may come back out.
+- [Microsoft Presidio](https://github.com/data-privacy-stack/presidio) - PII detection and anonymisation. `OSS` `MIT`
+- [gitleaks](https://github.com/gitleaks/gitleaks) · [TruffleHog](https://github.com/trufflesecurity/trufflehog) · [detect-secrets](https://github.com/Yelp/detect-secrets) - Secret scanners for code, logs and prompts. `OSS`
+- [Extracting Training Data from Large Language Models](https://arxiv.org/abs/2012.07805) - Carlini et al., 2021. Why anything you send may come back out.
 - PII datasets for evaluating detectors: [resources/datasets.md](resources/datasets.md#pii-and-privacy)
 - Guide: [docs/privacy-and-pii.md](docs/privacy-and-pii.md) · Lab: [03](labs/03-privacy-protection)
 
@@ -126,18 +126,18 @@ Each lab has an **unprotected baseline**, a **guarded** version, **tests** and t
 
 **41 red-teaming and evaluation tools:** [resources/evaluation-tools.md](resources/evaluation-tools.md)
 
-- [PyRIT](https://github.com/microsoft/PyRIT) – Microsoft's framework for orchestrated attacks and scoring. `OSS` `MIT`
-- [garak](https://github.com/NVIDIA/garak) – LLM vulnerability scanner with a large probe library. `OSS` `Apache-2.0`
-- [promptfoo](https://github.com/promptfoo/promptfoo) – red-team and regression tests that run in CI. `OSS` `MIT`
-- [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) – UK AISI's evaluation framework, with agent evals. `OSS` `MIT`
-- [AgentDojo](https://github.com/ethz-spylab/agentdojo) – a dynamic benchmark for prompt-injection attacks and defences on agents. `OSS`
+- [PyRIT](https://github.com/microsoft/PyRIT) - Microsoft's framework for orchestrated attacks and scoring. `OSS` `MIT`
+- [garak](https://github.com/NVIDIA/garak) - LLM vulnerability scanner with a large probe library. `OSS` `Apache-2.0`
+- [promptfoo](https://github.com/promptfoo/promptfoo) - Red-team and regression tests that run in CI. `OSS` `MIT`
+- [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) - UK AISI's evaluation framework, with agent evals. `OSS` `MIT`
+- [AgentDojo](https://github.com/ethz-spylab/agentdojo) - A dynamic benchmark for prompt-injection attacks and defences on agents. `OSS`
 - Lab: [05 · multi-turn red teaming](labs/05-agent-red-teaming)
 
 ## 7. Governance
 
 - [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) and its [Generative AI Profile (AI 600-1)](https://doi.org/10.6028/NIST.AI.600-1)
-- [ISO/IEC 42001](https://www.iso.org/standard/42001) – AI management systems, certifiable.
-- [EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) – obligations and dates in [resources/standards-and-frameworks.md](resources/standards-and-frameworks.md#regulation-and-codes-of-practice).
+- [ISO/IEC 42001](https://www.iso.org/standard/42001) - AI management systems, certifiable.
+- [EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) - Obligations and dates in [resources/standards-and-frameworks.md](resources/standards-and-frameworks.md#regulation-and-codes-of-practice).
 - Guide: [docs/agent-governance.md](docs/agent-governance.md) – audit trails, approval records, policy as code and evidence for auditors.
 
 ## 8. Standards and frameworks
