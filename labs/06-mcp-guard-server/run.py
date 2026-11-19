@@ -215,6 +215,7 @@ def run_one(guard, tool: str, args: Dict, approve: bool = False) -> Dict:
     r = guard.call(tool, args)
     if r["action"] == HOLD and approve and (r.get("approval") or {}).get("id"):
         r = dict(guard.call(tool, {**args, "approval": r["approval"]["id"]}), approved_after_hold=True)
+        r["action_before"] = HOLD
     return r
 
 
@@ -257,7 +258,7 @@ def main(argv=None) -> int:
     print(f"{'scenario':28} {'MCP tool':22} {'decision':16} {'safe':5} reason")
     print("-" * 110)
     for name, risk, tool, r, ok in rows:
-        dec = r["action"] + (" > ALLOW" if r.get("approved_after_hold") else "")
+        dec = (f"HOLD > {r['action']}" if r.get("approved_after_hold") else r["action"])
         print(f"{name:28} {tool:22} {dec:16} {'yes' if ok else 'NO':5} {str(r.get('reason', ''))[:60]}")
     attacks = [row for row in rows if row[1] != "none"]
     hits = sum(1 for row in attacks if not row[4])

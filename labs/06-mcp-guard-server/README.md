@@ -37,7 +37,9 @@ Every tool answers `ALLOW`, `ALLOW_MASKED` (continue with `use_this`), `HOLD_FOR
 |---|---|---|---|
 | `none` | 6/6 (100%) | works | runs without approval |
 | `local` | 0/6 (0%) | works | `HOLD_FOR_HUMAN`, runs after `--approve` |
-| `proofagent` | 0/6 expected | works | `HOLD_FOR_HUMAN` with an approval record |
+| `proofagent` | 1/6 until you add a payment rule, then 0/6 | works | `ALLOW` with a notice by default; `HOLD_FOR_HUMAN` with an approval record once your policy holds payments over an amount |
+
+The ProofAgent result is a lesson in itself. Payments are not held unless your organization's policy says so. Add a payments rule, such as "hold payments over 5,000", in **Guardrail → Policies** on app.proofagent.ai, then run the lab again. The model catches the injections and data leaks; how much money an agent may move without a human is your decision, written as policy.
 
 The `local` guard is regex rules plus a three-line action policy. It is for learning and is easy to evade (see [Lab 01](../01-prompt-injection)).
 
