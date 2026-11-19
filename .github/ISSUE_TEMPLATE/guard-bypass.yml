@@ -1,0 +1,18 @@
+name: Guard bypass / new attack scenario
+description: An attack that gets past a lab's guard
+labels: [lab, attack]
+body:
+  - type: dropdown
+    id: lab
+    attributes: {label: Lab, options: ["01 prompt injection", "02 MCP tool poisoning", "03 privacy", "04 fully guarded agent", "05 red teaming"]}
+    validations: {required: true}
+  - type: input
+    id: guard
+    attributes: {label: "Guard (--guard)", placeholder: "local, proofagent, ..."}
+  - type: textarea
+    id: payload
+    attributes: {label: The attack (text, turns or tool definition), render: text}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: What should have happened}

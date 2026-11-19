@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/examples/claude-code/guard_hook.py" }] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Bash|Write|Edit|WebFetch|mcp__.*",
+        "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/examples/claude-code/guard_hook.py" }] }
+    ],
+    "PostToolUse": [
+      { "matcher": "WebFetch|Read|Bash|mcp__.*",
+        "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/examples/claude-code/guard_hook.py" }] }
+    ]
+  }
+}

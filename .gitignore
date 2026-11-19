@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+findings.md
+findings.json
+pins.json
+.DS_Store

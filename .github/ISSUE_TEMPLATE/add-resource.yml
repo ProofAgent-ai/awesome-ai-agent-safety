@@ -1,0 +1,31 @@
+name: Suggest a resource
+description: A tool, paper, dataset, benchmark, standard or incident to add
+labels: [resource]
+body:
+  - type: input
+    id: name
+    attributes: {label: Name}
+    validations: {required: true}
+  - type: input
+    id: url
+    attributes: {label: Primary link (repo, paper, official page)}
+    validations: {required: true}
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options: [Guardrails, Evaluation and red teaming, MCP security, Research paper, Benchmark, Dataset, Standard or framework, Incident, Learning resource]
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes: {label: Type, options: [Open source, Commercial, Free tier, Paper or article]}
+  - type: textarea
+    id: why
+    attributes: {label: One line on what it does and why it belongs here}
+    validations: {required: true}
+  - type: checkboxes
+    id: affiliation
+    attributes:
+      label: Disclosure
+      options:
+        - label: I am affiliated with this project or vendor
