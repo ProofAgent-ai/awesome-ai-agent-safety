@@ -1,6 +1,6 @@
 # Labs
 
-Six runnable labs. Each has an **unprotected baseline**, a **guarded** version, **tests** and the **expected outcome**. You need Python 3.9 or newer and nothing else, and every lab runs offline.
+Six runnable labs. Each has an **unprotected baseline**, a **guarded** version, **tests** and the **expected outcome**. You need Python 3.10 or newer and nothing else, and every lab runs offline.
 
 | Lab | What you learn | Time |
 |---|---|---|

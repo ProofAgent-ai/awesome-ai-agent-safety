@@ -22,7 +22,7 @@ This repo collects what you need to build agents that survive contact with attac
 ```bash
 git clone https://github.com/ProofAgent-ai/awesome-ai-agent-safety && cd awesome-ai-agent-safety
 python3 labs/04-fully-guarded-agent/run.py     # watch attacks succeed, then fail
-python3 run_tests.py                           # 35 tests, Python 3.9+, no dependencies
+python3 run_tests.py                           # 35 tests, Python 3.10+, no dependencies
 ```
 
 ## Contents

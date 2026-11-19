@@ -1,4 +1,4 @@
-"""Run every lab's tests: python3 run_tests.py  (no dependencies, Python 3.9+)"""
+"""Run every lab's tests: python3 run_tests.py  (no dependencies, Python 3.10+)"""
 import importlib.util
 import sys
 import unittest
